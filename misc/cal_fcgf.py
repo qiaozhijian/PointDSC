@@ -78,7 +78,8 @@ def extract_features(model,
     feats = feats[inds]
 
     feats = torch.tensor(feats, dtype=torch.float32)
-    coords = torch.tensor(coords, dtype=torch.int32)
+    # coords = torch.tensor(coords, dtype=torch.int32)
+    # coords = torch.as_tensor(torch.from_numpy(coords), dtype=torch.int32)
 
     stensor = ME.SparseTensor(feats, coordinates=coords, device=device)
 

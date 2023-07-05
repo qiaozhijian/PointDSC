@@ -5,3 +5,4 @@ __pycache__/
 data/*
 .idea/
 *.json
+*.pth

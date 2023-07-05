@@ -38,7 +38,7 @@ def extract_fpfh_features(pcd_path, downsample, device):
     raw_src_pcd = o3d.io.read_point_cloud(pcd_path)
     estimate_normal(raw_src_pcd, radius=downsample*2)
     src_pcd = raw_src_pcd.voxel_down_sample(downsample)
-    src_features = o3d.registration.compute_fpfh_feature(src_pcd, o3d.geometry.KDTreeSearchParamHybrid(radius=downsample * 5, max_nn=100))
+    src_features = o3d.pipelines.registration.compute_fpfh_feature(src_pcd, o3d.geometry.KDTreeSearchParamHybrid(radius=downsample * 5, max_nn=100))
     src_features = np.array(src_features.data).T
     src_features = src_features / (np.linalg.norm(src_features, axis=1, keepdims=True) + 1e-6)
     return raw_src_pcd, np.array(src_pcd.points), src_features
