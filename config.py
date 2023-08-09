@@ -90,6 +90,8 @@ misc_arg.add_argument('--verbose', type=str2bool, default=True)
 misc_arg.add_argument('--pretrain', type=str, default='')
 misc_arg.add_argument('--weights_fixed', type=str2bool, default=False)
 
+parser.add_argument('--test_file', type=str, default='./experiments/kitti_10m/test.txt')
+
 
 def get_config():
     args = parser.parse_args()

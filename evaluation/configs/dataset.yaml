@@ -1,0 +1,10 @@
+kitti_root: /media/qzj/Document/datasets/KITTI/odometry/data_odometry_velodyne/dataset/
+apollo_root: /media/qzj/Document/datasets/Apollo
+kitti360_root: /media/qzj/Document/datasets/KITTI-360
+
+sample_interval: 2 # meters
+skip_frames: 250 # skip frames for loop closure detection
+
+evaluation:
+  rot_thd: 5 # the error between the estimated pose and GT shouldn't exceed 5 degrees
+  trans_thd: 2 # the error between the estimated pose and GT shouldn't exceed 2 meters
